@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FitnessApp.Core.Views.WelcomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="WelcomePage"
+    BackgroundColor="#EBF1FE"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="InterRegular" />
+                <Setter Property="TextColor" Value="#0E41A9" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        Margin="40"
+        RowDefinitions="Auto, *, *"
+        RowSpacing="20">
+
+        <Image Grid.Row="0" Source="bg.svg" />
+
+        <StackLayout Grid.Row="1">
+            <Label
+                FontAttributes="Bold"
+                FontSize="40"
+                Text="Build your body" />
+            <Label FontSize="20" Text="You just can't beat the person who never gives up!" />
+        </StackLayout>
+
+        <Image
+            Grid.Row="2"
+            Source="next_page.png"
+            WidthRequest="100">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</ContentPage>
