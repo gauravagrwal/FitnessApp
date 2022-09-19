@@ -6,4 +6,5 @@ public partial class HomePage : ContentPage
     {
         InitializeComponent();
     }
+    private void TapGestureRecognizer_Tapped(object sender, EventArgs e) => App.Current.MainPage = new NavigationPage(new ProfilePage());
 }

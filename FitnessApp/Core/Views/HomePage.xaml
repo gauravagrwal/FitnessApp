@@ -3,11 +3,162 @@
     x:Class="FitnessApp.Core.Views.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="HomePage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    Title="HomePage"
+    BackgroundColor="#EBF1FE"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="InterRegular" />
+                <Setter Property="TextColor" Value="#0E41A9" />
+            </Style>
+            <Style TargetType="Border">
+                <Setter Property="BackgroundColor" Value="#EBF1FE" />
+                <Setter Property="Stroke" Value="#EBF1FE" />
+            </Style>
+            <Style TargetType="VerticalStackLayout">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        Margin="20,30"
+        RowDefinitions="Auto, *, Auto"
+        RowSpacing="30">
+
+        <SearchBar Grid.Row="0" Placeholder="Search" />
+
+        <Grid
+            Grid.Row="1"
+            ColumnDefinitions="*, *"
+            ColumnSpacing="20"
+            RowDefinitions="*, *, *"
+            RowSpacing="20">
+            <Border Grid.Row="0" Grid.Column="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="walking.png" WidthRequest="30" />
+                    <Label FontSize="Body" Text="Walking" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="cycling.png" WidthRequest="30" />
+                    <Label FontSize="Body" Text="Cycling" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="treadmill.png" WidthRequest="30" />
+                    <Label FontSize="Body" Text="Treadmill" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="gym.png" WidthRequest="40" />
+                    <Label FontSize="Body" Text="Gym" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="running.png" WidthRequest="30" />
+                    <Label FontSize="Body" Text="Running" />
+                </VerticalStackLayout>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Image Source="yoga.png" WidthRequest="30" />
+                    <Label FontSize="Body" Text="Yoga" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <StackLayout Grid.Row="2" Spacing="20">
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <Grid
+                    Padding="20,0"
+                    ColumnDefinitions="*, Auto"
+                    HeightRequest="55">
+                    <Label
+                        Grid.Column="0"
+                        FontSize="Body"
+                        Text="Daily Meals"
+                        VerticalOptions="Center" />
+                    <Image
+                        Grid.Column="1"
+                        Source="meal.png"
+                        WidthRequest="30" />
+                </Grid>
+            </Border>
+            <Border>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Opacity="0.2" />
+                </Border.Shadow>
+                <Grid
+                    Padding="20,0"
+                    ColumnDefinitions="*, Auto"
+                    HeightRequest="55">
+                    <Label
+                        Grid.Column="0"
+                        FontSize="Body"
+                        Text="Other Information"
+                        VerticalOptions="Center" />
+                    <Image
+                        Grid.Column="1"
+                        Source="info.png"
+                        WidthRequest="30" />
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                </Border.GestureRecognizers>
+            </Border>
+        </StackLayout>
+    </Grid>
 </ContentPage>

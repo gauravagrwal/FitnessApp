@@ -51,11 +51,22 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
 	  <None Remove="Resources\Images\bg.svg" />
+	  <None Remove="Resources\Images\cycling.png" />
+	  <None Remove="Resources\Images\gym.png" />
+	  <None Remove="Resources\Images\info.png" />
+	  <None Remove="Resources\Images\meal.png" />
 	  <None Remove="Resources\Images\next_page.png" />
+	  <None Remove="Resources\Images\running.png" />
+	  <None Remove="Resources\Images\treadmill.png" />
+	  <None Remove="Resources\Images\walking.png" />
+	  <None Remove="Resources\Images\yoga.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Core\Views\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Core\Views\ProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Core\Views\WelcomePage.xaml">
